@@ -1,19 +1,22 @@
 const str='PAYPALISHIRING';
-const row=3;
+const sub='PAY';
 
-function zigzag(str) {
+var isSubsequence = function(s, t) {
+    const set = new Set(t);
+     
+     let str='';
 
-}
+     for(let i=0;i<s.length;i++){
+         if(set.has(s[i])){
+             str+=s[i];
+         }
+     }
+     console.log({set,str})
+     if(str===s){
+         return true
+     }else{
+         return false;
+     }
+};
 
-function storeStrInArr(str,row){
-  let arr=[];
-  let temp='';
-  for(let i=0;i<str.length;i++){
-      temp+=str[i];
-    if(i+1%3==0){
-        arr.push(temp);
-        arr.push(str[i]);
-        temp='';
-    } 
-  }
-}
+console.log(isSubsequence(str,sub));
