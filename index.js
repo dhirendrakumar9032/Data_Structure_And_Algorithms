@@ -1,39 +1,17 @@
-class Stack{
-    constructor(){
-        this.stack=[]
-    }
+var pivotIndex = function(nums) {
+    
+    const total=nums.reduce((acc,num)=>acc+num);
+    
+    let curr=nums[0];
 
-    pop(){
-        if(!this.stack.length){
-            return 'stack is  empty'
+    for(let i=1; i<nums.length; i++) {
+        let temp=total-curr-nums[i];
+        if(curr==temp){
+            return i;
         }
-        return this.stack.pop()
+            curr+=nums[i];
     }
+  return -1;
+};
 
-    push(value){
-        this.stack.push(value);
-    }
-
-    peek(){
-         if(!this.stack.length){
-            return 'stack is  empty'
-        }
-        return this.stack[this.stack.length-1];
-    }
-
-    print(){
-        console.log(this.stack)
-    }
-}
-
-let stack =  new Stack();
-
-stack.push(1);
-stack.push(10);
-stack.push(15);
-stack.push(21);
-
-
-stack.print()
-console.log(stack.pop())
-
+console.log(pivotIndex([1,7,3,6,5,6]));
