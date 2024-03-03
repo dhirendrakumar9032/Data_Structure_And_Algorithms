@@ -1,17 +1,29 @@
-var pivotIndex = function(nums) {
-    
-    const total=nums.reduce((acc,num)=>acc+num);
-    
-    let curr=nums[0];
-
-    for(let i=1; i<nums.length; i++) {
-        let temp=total-curr-nums[i];
-        if(curr==temp){
-            return i;
-        }
-            curr+=nums[i];
-    }
-  return -1;
-};
-
-// console.log(pivotIndex([1,7,3,6,5,6]));
+const alpha={
+    a:0,
+    b:1,
+    c:2,
+    c:3,
+    d:4,
+    e:5,
+    f:6,
+    g:7,
+    h:8,
+    i:9,
+    j:10,
+    k:11,
+    l:12,
+    m:13,
+    n:14,
+    o:15,
+    p:16,
+    q:17,
+    r:18,
+    s:19,
+    t:20,
+    u:21,
+    v:22,
+    w:23,
+    x:24,
+    y:25,
+    z:26
+  }
